@@ -11,7 +11,7 @@ date: 2021-03-18 17:00:00 -0300
 
 
 
-Suponho que você em algum momento desejou obter tipos e valores diferentes retornados de por mesmo método, inclusive acredito fortemente que você já usou **Tuplas** (ou ainda faz uso disso) como uma solução alternativa para alcançar um retorno satisfatório, não é mesmo?
+Suponho que você em algum momento desejou obter tipos e valores diferentes retornados pelo mesmo método, inclusive acredito fortemente que você já usou **Tuplas** (ou ainda faz uso disso) como uma solução alternativa para alcançar um retorno satisfatório, não é mesmo?
 
 
 
@@ -22,7 +22,7 @@ No paradigma funcional esse contexto costuma ser resolvido usando uma forma conh
 Em C# é possível ter um comportamento semelhante ao descrito acima fazendo o uso de uma biblioteca chamada [**OneOf**](https://www.nuget.org/packages/OneOf/) criada e mantida por [**Harry McIntyre**](https://github.com/mcintyre321/OneOf). Essa biblioteca fornece ao C# o estilo usado em F# para tratar Unions usando tipos personalizados em seu retorno permitindo que métodos devolvam tipos com valores unicos porém diferentes conforme o fluxo tratado na função, vejamos o exemplo abaixo:
 
 ### Caminho tradicional:
-O objetivo do código abaixo é validar o parâmetro recebido, se for inválido será lançado uma exception, o contrario retornará uma entidade que representa um comprovante de pagamento. A Controller por sua vez validará o retorno e orquestrará a resposta conforme o resultado obtido pela função **MakePayment**.
+O objetivo do código abaixo é validar o parâmetro recebido, se for inválido será lançado uma exception, o contrário retornará uma entidade que representa um comprovante de pagamento. A Controller por sua vez validará o retorno e orquestrará o response conforme o resultado obtido através da função **MakePayment**.
 
 >Service
 ``` cs
@@ -74,7 +74,7 @@ public IActionResult Post(OrderPurchase body)
 }
 ```
 
-### Usando a biblioteca OneOf o comportamento acima ficaria assim:
+### Usando a biblioteca OneOf o mesmo comportamento acima ficaria assim:
 
 
 ``` cs
